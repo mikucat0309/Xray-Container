@@ -5,13 +5,13 @@ cache	:= cache
 tool	:= buildah
 
 define run-common
-	mkdir -p $(cache)/$(arch)
+	mkdir -p $(cache)/$(version)/$(arch)
 	wget -qNP $(cache) "https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat"
 	wget -qNP $(cache) "https://github.com/v2fly/geoip/releases/latest/download/geoip.dat"
-	wget -qNP $(cache)/$(arch) "https://github.com/XTLS/Xray-core/releases/download/$(version)/Xray-linux-$(pkgarch).zip"
-	unzip -o $(cache)/$(arch)/Xray-linux-$(pkgarch).zip -d $(cache)/$(arch) xray
+	wget -qNP $(cache)/$(version)/$(arch) "https://github.com/XTLS/Xray-core/releases/download/$(version)/Xray-linux-$(pkgarch).zip"
+	unzip -o $(cache)/$(version)/$(arch)/Xray-linux-$(pkgarch).zip -d $(cache)/$(version)/$(arch) xray
 	sudo $(tool) build --arch $(arch) --manifest $(manifest) -f Dockerfile.arch \
-		--build-arg TARGETARCH=$(arch) --build-arg CACHE=$(cache) .
+		--build-arg TARGETARCH=$(arch) --build-arg CACHE=$(cache) --build-arg VERSION=$(version) .
 endef
 
 all: arm arm64 386 amd64

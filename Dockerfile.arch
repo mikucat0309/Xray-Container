@@ -2,11 +2,10 @@ FROM scratch
 LABEL maintainer="mikucat <contact@mikuc.at>"
 ARG TARGETARCH
 ARG CACHE
+ARG VERSION
 
-COPY ${CACHE}/${TARGETARCH}/xray /xray
-COPY ${CACHE}/geoip.dat /geoip.dat
-COPY ${CACHE}/dlc.dat /geosite.dat
+COPY "${CACHE}/${VERSION}/${TARGETARCH}/xray" "${CACHE}/geoip.dat" "${CACHE}/dlc.dat" /
 
 EXPOSE 443
-CMD [ "/xray", "-config", "/config.json" ]
+CMD [ "/xray","-config","/config.json" ]
 
