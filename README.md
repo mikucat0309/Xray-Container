@@ -24,6 +24,13 @@ None
 
 ## Build
 
+### Requirements
+
+- buildah
+- qemu-user-static
+
+### Default
+
 ```bash
 make
 ```
@@ -40,8 +47,3 @@ make <ARCH>
 make version=<VERSION>
 ```
 
-### Use docker
-
-```bash
-make tool=docker
-```
