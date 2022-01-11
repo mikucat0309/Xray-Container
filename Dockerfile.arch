@@ -1,0 +1,12 @@
+FROM scratch
+LABEL maintainer="mikucat <contact@mikuc.at>"
+ARG TARGETARCH
+ARG CACHE
+
+COPY ${CACHE}/${TARGETARCH}/xray /xray
+COPY ${CACHE}/geoip.dat /geoip.dat
+COPY ${CACHE}/dlc.dat /geosite.dat
+
+EXPOSE 443
+CMD [ "/xray", "-config", "/config.json" ]
+
