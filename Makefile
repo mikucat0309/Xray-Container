@@ -1,8 +1,8 @@
-name	:= mikucat/xray
-version	:= 1.5.2
-manifest:= $(name):$(version)
-cache	:= cache
-tool	:= buildah
+name		:= mikucat/xray
+version		:= 1.5.2
+manifest	:= $(name):$(version)
+cache		:= cache
+tool		:= buildah
 
 define run-common
 	mkdir -p $(cache)/$(version)/$(arch)
@@ -16,8 +16,8 @@ endef
 
 all: ppc64le s390x arm/v6 arm/v7 arm64 386 amd64
 
-ppc64le: args	:= --arch ppc64le
-ppc64le: pkgarch:= ppc64le
+ppc64le: args		:= --arch ppc64le
+ppc64le: pkgarch	:= ppc64le
 ppc64le:
 	$(run-common)
 
