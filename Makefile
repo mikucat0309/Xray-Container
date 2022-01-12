@@ -36,9 +36,9 @@ arm/v7: pkgarch	:= arm32-v7a
 arm/v7:
 	$(run-common)
 
-arm64: args		:= --arch arm64 --variant v8
-arm64: pkgarch	:= arm64-v8a
-arm64:
+arm64/v8: args		:= --arch arm64 --variant v8
+arm64/v8: pkgarch	:= arm64-v8a
+arm64/v8:
 	$(run-common)
 
 386: args		:= --arch 386
