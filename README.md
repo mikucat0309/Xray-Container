@@ -2,8 +2,11 @@
 
 ## Supported architectures
 
+- `ppc64le`
+- `s390x`
+- `arm/v6`
 - `arm/v7`
-- `arm64`
+- `arm64/v8`
 - `386`
 - `amd64`
 
@@ -38,12 +41,12 @@ make
 ### Specific architecture
 
 ```bash
-make <ARCH>
+make arm/v7
 ```
 
 ### Specific version
 
 ```bash
-make version=<VERSION>
+make version=1.5.2
 ```
 
