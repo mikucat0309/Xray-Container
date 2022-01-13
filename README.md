@@ -2,13 +2,20 @@
 
 ## Supported architectures
 
-- `ppc64le`
-- `s390x`
+- `386`
+- `amd64`
+- `arm/v5`
 - `arm/v6`
 - `arm/v7`
 - `arm64/v8`
-- `386`
-- `amd64`
+- `ppc64`
+- `ppc64le`
+- `mips`
+- `mipsle`
+- `mips64`
+- `mips64le`
+- `riscv64`
+- `s390x`
 
 ## Usage
 
