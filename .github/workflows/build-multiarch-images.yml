@@ -1,5 +1,7 @@
 name: build-multiarch-images
 
+on: push
+
 env:
   NAME: mikucat/xray
   VERSION: 1.5.2
