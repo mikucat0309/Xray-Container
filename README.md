@@ -1,59 +1,57 @@
 # Xray-core Container Image
 
-## Supported architectures
+## Supported platforms
 
-- `386`
-- `amd64`
-- `arm/v5`
-- `arm/v6`
-- `arm/v7`
-- `arm64/v8`
-- `ppc64`
-- `ppc64le`
-- `mips`
-- `mipsle`
-- `mips64`
-- `mips64le`
-- `riscv64`
-- `s390x`
+- `linux/386`
+- `linux/amd64`
+- `linux/arm/v5`
+- `linux/arm/v6`
+- `linux/arm/v7`
+- `linux/arm64/v8`
+- `linux/ppc64`
+- `linux/ppc64le`
+- `linux/mips`
+- `linux/mipsle`
+- `linux/mips64`
+- `linux/mips64le`
+- `linux/riscv64`
+- `linux/s390x`
 
 ## Usage
 
-Expose port 443 by default.
+### Exposed Ports
 
-### Mount
+- 443-449
+
+### Mounts
 
 - `/config.json` : Xray config  
     [example](https://github.com/XTLS/Xray-examples)  
     [reference](https://xtls.github.io/config/) (Chinese)  
     [v2ray reference](https://www.v2fly.org/en_US/config/overview.html) (Chinese & English)  
 
-### Environment variables
-
-None  
-
 ## Build
 
 ### Requirements
 
-- buildah
-- qemu-user-static
+- `docker buildx`
+- `qemu-user-static`
 
-### Default
+### Usage
 
 ```bash
-make
+make [version=<VERSION>] [platform=<PLATFORM...>]
 ```
 
 ### Specific architecture
 
 ```bash
-make arm/v7
+make platform=linux/arm/v7
 ```
 
-### Specific version
+### All architectures
 
 ```bash
-make version=1.5.2
+make all
 ```
 
