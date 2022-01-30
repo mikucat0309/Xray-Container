@@ -3,9 +3,19 @@ name: build-multiarch-images
 on: push
 
 env:
-  NAME: mikucat0309/xray
+  NAME: ${{ github.repository_owner }}/xray
   VERSION: 1.5.2
-  PLATFORMS: linux/amd64,linux/arm64
+  PLATFORMS: |
+    linux/386
+    linux/amd64
+    linux/arm/v6
+    linux/arm/v7
+    linux/arm64
+    linux/mips64
+    linux/mips64le
+    linux/ppc64le
+    linux/riscv64
+    linux/s390x
 
 jobs:
   buildx:
