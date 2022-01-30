@@ -4,7 +4,7 @@ all			:= linux/386,linux/amd64,linux/arm/v5,linux/arm/v6,linux/arm/v7,linux/arm6
 
 
 name		:= mikucat/xray
-version		:= 1.5.2
+version		:= 1.5.3
 manifest	:= $(name):$(version)
 platform	:= linux/amd64,linux/arm64/v8
 
