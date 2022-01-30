@@ -37,8 +37,8 @@ jobs:
         with:
           file: Containerfile.architecture
           context: .
-          platforms: $PLATFORMS
+          platforms: ${{ env.PLATFORMS }}
           push: true
-          tags: $NAME:latest,$NAME:$VERSION
-          build-args: VERSION=$VERSION
+          tags: ${{ env.NAME }}:latest,${{ env.NAME }}:${{ env.VERSION }}
+          build-args: VERSION=${{ env.VERSION }}
 
