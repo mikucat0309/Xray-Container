@@ -3,7 +3,7 @@ name: build-multiarch-images
 on: push
 
 env:
-  NAME: mikucat/xray
+  NAME: mikucat0309/xray
   VERSION: 1.5.2
   PLATFORMS: linux/amd64,linux/arm64
 
@@ -39,6 +39,8 @@ jobs:
           context: .
           platforms: ${{ env.PLATFORMS }}
           push: true
-          tags: ${{ env.NAME }}:latest,${{ env.NAME }}:${{ env.VERSION }}
+          tags: |
+            ghcr.io/${{ env.NAME }}:latest
+            ghcr.io/${{ env.NAME }}:${{ env.VERSION }}
           build-args: VERSION=${{ env.VERSION }}
 
