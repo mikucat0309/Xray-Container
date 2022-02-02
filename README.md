@@ -1,4 +1,6 @@
-# Xray-core Container Image
+# Xray-container
+
+Xray-core container image
 
 ## Supported platforms
 
@@ -18,6 +20,12 @@
 - `linux/s390x`
 
 ## Usage
+
+- [GitHub Package](https://github.com/users/mikucat0309/packages/container/package/xray)
+
+```bash
+docker pull ghcr.io/mikucat0309/xray:latest
+```
 
 ### Exposed Ports
 
