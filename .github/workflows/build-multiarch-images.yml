@@ -1,6 +1,9 @@
 name: build-multiarch-images
 
-on: push
+on:
+  push:
+    tags:        
+      - v1.**
 
 env:
   NAME: ${{ github.repository_owner }}/xray
